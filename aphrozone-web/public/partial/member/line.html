@@ -1,0 +1,51 @@
+<div class="container">
+	<ul class="nav nav-pills nav-justified">
+		<li><a href ng-click="go('/member/info')">전체 회원정보로</a></li>
+		<li><a href ng-click="go('/member/detail/{{mno}}')">기본정보</a></li>
+		<li class="active"><a href ng-click="go('/member/detail/{{mno}}/line')">라인추천</a></li>
+		<li><a href ng-click="go('/member/detail/{{mno}}/grade')">등급정보</a></li>
+	</ul>
+
+	<legend><i class="glyphicon glyphicon-eye-open"></i>회원상세정보</legend>
+
+	<legend class="smalltext">라인추천</legend>
+	
+	자주 산 품목
+	<table class="table">
+		<tr>
+			<th>품목</th>
+			<th>횟수</th>
+		</tr>
+		<tr ng-repeat = "ele in usualline">
+			<td>{{ele.pname}}</td>
+			<td>{{ele.count}}</td>
+		</tr>
+	</table>
+
+	최근 산 품목
+	<table class="table">
+		<tr>
+			<th>품목</th>
+			<th>날짜</th>
+		</tr>
+		<tr ng-repeat = "ele in rescentline">
+			<td>{{ele.pname}}</td>
+			<td>{{ele.sdate | date : 'yy/M/d'}}</td>
+		</tr>
+	</table>
+
+	연관상품
+	<table class="table">
+		<tr>
+			<th>품목</th>
+			<th>연관품목</th>
+		</tr>
+		<tr ng-repeat = "ele in recommendline track by $index">
+			<td>{{ele.src}}</td>
+			<td>{{ele.result1}}</td>
+		</tr>
+	</table>
+
+
+	<legend></legend>
+</div>

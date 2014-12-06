@@ -1,0 +1,47 @@
+<div class="container">
+	<ul class="nav nav-pills nav-justified">
+		<li><a href ng-click="go('/product/list')">제품목록</a></li>
+		<li class="active"><a href ng-click="go('/product/sell')">제품판매</a></li>
+	</ul>
+	<legend><i class="glyphicon glyphicon-credit-card"></i>제품판매</legend>
+
+	<form id="sell" ng-submit = "sellProduct()" role="form">
+	<div class="row">
+		<div class="col-sm-2 joinTitle">회원정보</div>
+		<div class="col-sm-4 col-xs-6">
+			<input ng-model="sell.mno" placeholder="회원번호" type="text" requird="" class="form-control">
+		</div>
+		<div class="col-sm-4 col-xs-6">
+			<input ng-model="sell.mname" placeholder="회원이름" type="text" requird="" class="form-control">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2 joinTitle">제품정보</div>
+		<div class="col-sm-4 col-xs-6">
+			<select ng-model="sell.pmoney" name="pname" class="form-control">
+				<option ng-repeat="product in products"
+            			value="{{product.money}}">
+      					{{product.pname}}
+    			</option>
+			</select>
+		</div>
+		<div class="col-sm-4 col-xs-6">
+			<input ng-model="sell.amount" placeholder="개수" value="0" type="number" requird="" class="form-control">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2 joinTitle">결제수단</div>
+		<div class="col-sm-4">
+			<label class="radio-inline">
+				<input type="radio" ng-model="sell.method" id="inlineCheckbox1" value="현글">현금
+			</label>
+			<label class="radio-inline">
+				<input type="radio" ng-model="sell.method" name="method" id="inlineCheckbox2" value="카드">카드
+			</label>
+		</div>
+	</div>
+	<div class="center">
+		<button type="button" class="btn btn-primary btn-lg">판매하기</button>
+	</div>
+</form>
+</div>

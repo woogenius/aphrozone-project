@@ -1,0 +1,48 @@
+<div class="container">
+	<ul class="nav nav-pills nav-justified">
+		<li id="memberjoin"><a href ng-click="go('/member/join')">회원등록</a></li>
+		<li id="memberbuy" class="active"><a href ng-click="go('/member/buy')">구매내역</a></li>
+		<li id="memberinfo"><a href ng-click="go('/member/info')">회원정보</a></li>
+	</ul>
+	<legend><i class="glyphicon glyphicon-list"></i>구매내역</legend>
+	<div class="row">
+		<div class="col-sm-6 col-xs-6"><input placeholder="회원번호" type="search" ng-model="query.mno" class="form-control">
+		</div>
+		<div class="col-sm-6 col-xs-6"><input placeholder="회원이름" type="search" ng-model="query.mname" class="form-control">
+		</div>
+	</div>
+	<table id="buy_member" class="table table-hover">
+		<thead>
+			<tr>
+				<th>판매일 </th>
+				<th>회원번호</th>
+				<th>이름</th>
+				<th>상품명 </th>
+				<th>개수 </th>
+				<th>총액 </th>
+				<th>수단 </th>
+				<th>추천인 </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="memberBuy in memberBuys | filter:query | startFrom:currentPage*pageSize | limitTo:pageSize">
+				<td>{{memberBuy.sdate | date : 'yy/M/d'}}</td>
+				<td>{{memberBuy.mno}}</td>
+				<td>{{memberBuy.mname}}</td>
+				<td>{{memberBuy.pname}}</td>
+				<td>{{memberBuy.amount}}</td>
+				<td>{{memberBuy.money | number}}</td>
+				<td>{{memberBuy.method}}</td>
+				<td>{{memberBuy.rno}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="nextbtn">
+			<button class="btn btn-default" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+		        Previous
+		    </button>
+		    <button class="btn btn-default" ng-disabled="currentPage >= memberBuys.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+		        Next
+		    </button>
+	</div>
+</div>

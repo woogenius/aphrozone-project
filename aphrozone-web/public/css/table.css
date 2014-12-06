@@ -1,0 +1,24 @@
+@media all and (max-width:767px) {
+
+	#buy_member tr>th:nth-child(2), #buy_member tr>td:nth-child(2), #buy_member tr>th:nth-child(6), #buy_member tr>td:nth-child(6), #buy_member tr>th:nth-child(7), #buy_member tr>td:nth-child(7), #buy_member tr>th:nth-child(8), #buy_member tr>td:nth-child(8){
+		display: none;
+	}
+
+	#buy_member tr>td:nth-child(4) {
+	    max-width: 120px;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	}
+	#buy_member tr>th:nth-child(4) {
+	    max-width: 120px;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	}
+
+	#info_member tr>th:nth-child(5), #info_member tr>td:nth-child(5), #info_member tr>th:nth-child(6), #info_member tr>td:nth-child(6) {
+		display: none;
+	}
+
+}

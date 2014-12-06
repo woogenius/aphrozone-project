@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html ng-app="aphroZone">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<link rel="apple-touch-startup-image" href="img/aphrozone_logo.png" />
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/table.css">
+    <script src="lib/jquery-2.1.0.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-resource.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/jquery.treegrid.js"></script>
+    <script src="lib/jquery.treegrid.bootstrap3.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+	<div class="navbar navbar-custom navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle collapsed">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href ng-click="go('/main')" class="navbar-brand">
+					<img id="logo" src="img/aphrozone_logo.jpg">
+				</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li id="member"><a href ng-click="go('/member')">회원관리</a></li>
+					<li id="sales"><a href ng-click="go('/sales')">영업사원관리</a></li>
+					<li id="product"><a href ng-click="go('/product')">매출관리</a></li>
+					<li id="schedule"><a href ng-click="go('/main')">일정관리</a></li>
+					<li id="stats"><a href ng-click="go('/stats/location')">기준정보관리</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href ng-click="go('/logout')">로그아웃</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div ng-view>
+	</div>
+</body>
+</html>

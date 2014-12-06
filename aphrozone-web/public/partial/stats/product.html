@@ -1,0 +1,23 @@
+<div class="container">
+	<ul class="nav nav-pills nav-justified">
+		<li id="memberjoin"><a href ng-click="go('/stats/location')">지역별</a></li>
+		<li id="memberbuy"><a href ng-click="go('/stats/age')">연령별</a></li>
+		<li id="memberinfo" class="active"><a href ng-click="go('/stats/product')">제품별</a></li>
+	</ul>
+	<legend><i class="glyphicon glyphicon-stats"></i>매출통계</legend>
+
+	<table class="table">
+		<tr>
+			<th>제품명</th>
+			<th>매출</th>
+		</tr>
+		<tr ng-repeat="ele in datas">
+			<td>{{ele.pname}}</td>
+			<td>{{ele.money | number}}</td>
+		</tr>
+		
+	</table>
+
+
+
+</div>

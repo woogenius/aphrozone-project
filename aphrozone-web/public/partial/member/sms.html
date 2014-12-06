@@ -1,0 +1,23 @@
+<div class="container">
+	<ul class="nav nav-pills nav-justified">
+		<li><a href ng-click="go('/member/join')">회원등록</a></li>
+		<li><a href ng-click="go('/member/info')">회원조회</a></li>
+		<li><a href ng-click="go('/member/possible')">가망회원현황</a></li>
+		<li class="active"><a href ng-click="go('/member/sms')">SMS전송내역</a></li>
+	</ul>
+	<table id="info_member" class="table table-hover">
+		<thead>
+			<tr>
+				<th>시간</th>
+				<th>받는사람</th>
+				<th>내용</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="sms in smsList">
+				<td>{{new Date(sms.dateSent)}}</td>
+				<td>{{sms.to}}</td>
+				<td>{{sms.body}}</td>
+			</tr>
+		</tbody>
+</div>

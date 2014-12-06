@@ -1,0 +1,29 @@
+<div class="container">
+	<ul class="nav nav-pills nav-justified">
+		<li class="active"><a href ng-click="go('/product/list')">제품목록</a></li>
+		<li><a href ng-click="go('/product/sell')">제품판매</a></li>
+	</ul>
+	<legend><i class="glyphicon glyphicon-th-large"></i>제품목록</legend>
+	<div class="row">
+		<div class="col-sm-6 col-xs-6"><input placeholder="상품명" type="search" ng-model="query.pname" class="form-control">
+		</div>
+		<div class="col-sm-6 col-xs-6"><input placeholder="거래처" type="search" ng-model="query.supplier" class="form-control">
+		</div>
+	</div>
+	<table id="info_member" class="table table-hover">
+		<thead>
+			<tr>
+				<th>상품명</th>
+				<th>상품가격</th>
+				<th>거래처</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="product in products | filter:query">
+				<td>{{product.pname}}</td>
+				<td>{{product.money | number}}</td>
+				<td>{{product.supplier}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

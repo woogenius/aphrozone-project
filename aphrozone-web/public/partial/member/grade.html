@@ -1,0 +1,32 @@
+<div class="container">
+	<ul class="nav nav-pills nav-justified">
+		<li><a href ng-click="go('/member/info')">전체 회원정보로</a></li>
+		<li><a href ng-click="go('/member/detail/{{mno}}')">기본정보</a></li>
+		<li><a href ng-click="go('/member/detail/{{mno}}/line')">라인추천</a></li>
+		<li class="grade"><a href ng-click="go('/member/detail/{{mno}}/grade')">등급정보</a></li>
+	</ul>
+
+	<legend><i class="glyphicon glyphicon-eye-open"></i>회원상세정보</legend>
+
+	<legend class="smalltext">등급정보</legend>
+	<table class="table">
+		<tr>
+			<th>R</th>
+			<th>F</th>
+			<th>M</th>
+			<th>점수</th>
+			<th>등급</th>
+		</tr>
+		<tr>
+			<td>{{data.rlv}}</td>
+			<td>{{data.qlv}}</td>
+			<td>{{data.mlv}}</td>
+			<td>{{data.score}}</td>
+			<td>{{data.grade}}</td>
+		</tr>
+	</table>
+
+
+
+	<legend></legend>
+</div>

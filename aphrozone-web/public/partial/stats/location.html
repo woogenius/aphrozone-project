@@ -1,0 +1,39 @@
+<div class="container">
+	<ul class="nav nav-pills nav-justified">
+		<li id="memberjoin" class="active"><a href ng-click="go('/stats/location')">지역별</a></li>
+		<li id="memberbuy"><a href ng-click="go('/stats/age')">연령별</a></li>
+		<li id="memberinfo"><a href ng-click="go('/stats/product')">제품별</a></li>
+	</ul>
+	<legend><i class="glyphicon glyphicon-stats"></i>매출통계</legend>
+
+	<table class="table">
+		<tr>
+			<th>지역</th>
+			<th>매출</th>
+		</tr>
+		<tr ng-repeat="ele in datas">
+			<td>{{ele.loc}}</td>
+			<td>{{ele.money | number}}</td>
+		</tr>
+		
+	</table>
+
+  <div id="chartContainer">
+    <script type="text/javascript-lazy" src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript-lazy" src="http://dimplejs.org/dist/dimple.v1.1.5.min.js"></script>
+    <script type="text/javascript-lazy">
+      var svg = dimple.newSvg("#chartContainer", 800, 600);
+      var data = [
+        { "Word":"Hello", "Awesomeness":2000 },
+        { "Word":"World", "Awesomeness":3000 }
+      ];
+      var chart = new dimple.chart(svg, data);
+      chart.addCategoryAxis("x", "Word");
+      chart.addMeasureAxis("y", "Awesomeness");
+      chart.addSeries(null, dimple.plot.bar);
+      chart.draw();
+      console.log("asdfasfd")
+    </script>
+  </div>
+
+</div>

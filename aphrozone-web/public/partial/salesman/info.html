@@ -1,0 +1,36 @@
+<div class="container">
+	<ul class="nav nav-pills nav-justified">
+		<li><a href ng-click="go('/sales/join')">사원등록</a></li>
+		<li class="active"><a href ng-click="go('/sales/info')">사원조회</a></li>
+		<li><a href ng-click="go('/sales/possible')">가망회원현황</a></li>
+		<li><a href ng-click="go('/sales/sms')">SMS전송내역</a></li>
+		<li><a href ng-click="go('/sales/incentive')">수당조회</a></li>
+		<li><a href ng-click="go('/sales/bom')">계보도</a></li>
+		<li><a href ng-click="go('/sales/approval')">가입승인처리</a></li>
+		<li><a href ng-click="go('/sales/demotion')">강등승인처리</a></li>
+	</ul>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>아이디</th>
+				<th>이름</th>
+				<th>성별</th>
+				<th>생년월일</th>
+				<th>전화번호</th>
+				<th>추천인번호</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="salesInfo in salesInfos">
+				<td>{{salesInfo.mno}}</td>
+				<td>{{salesInfo.id}}</td>
+				<td>{{salesInfo.name}}</td>
+				<td>{{salesInfo.gender}}</td>
+				<td>{{salesInfo.bday | date : 'yyyy-MM-dd'}}</td>
+				<td>{{salesInfo.phoneno}}</td>
+				<td>{{salesInfo.recommender_mno}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
